@@ -1,5 +1,5 @@
 import React from "react";
-import Video from "./Video";
+import VideoContainer from "./VideoContainer";
 
 const Course = () => {
   return (
@@ -9,7 +9,7 @@ const Course = () => {
           <div className="text-3xl p-2 m-2 font-bold">Welcome User,</div>
           <div className="text-xl p-2 m-2 font-semibold">Let's Start Learning</div>
         </div>
-        <Video />
+        <VideoContainer />
       </div>
     </div>
   );

@@ -1,9 +1,7 @@
 import React from "react";
 import google from "../assets/images/google.jpg";
-import {useNavigate} from "react-router-dom"
 
 const Login = () => {
-const navigate = useNavigate()
 
   return (
     <div className="">
@@ -30,7 +28,7 @@ const navigate = useNavigate()
 
             <div className="my-4 mx-4">
               <span>Don't have an Account, Create Account </span>
-              <span onClick={()=>{navigate("/signup")}} className=" mx-2 text-blue-600 underline cursor-pointer">
+              <span onClick={()=>{}} className=" mx-2 text-blue-600 underline cursor-pointer">
                
                 Sign Up
               </span>

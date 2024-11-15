@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/store/appSlice";
 import hmb2 from "../assets/images/hmb2.png";
-import { Link } from "react-router-dom";
 
 const Sidebar = (props) => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
@@ -19,14 +18,13 @@ const Sidebar = (props) => {
           alt="menu"
           src={hmb2}
         />
-        <Link className="text-black" to="/">
           <label className="text-3xl font-bold ml-1 py-2 cursor-pointer">
             Keify
           </label>
-        </Link>
+        
       </div>
 
-      <ul className="my-4 mx-2 text-xl" l>
+      <ul className="my-4 mx-2 text-xl font-semibold" l>
         <li className="py-2">Courses</li>
         <li className="py-2">Blogs</li>
         <li className="py-2">Gift a Course</li>

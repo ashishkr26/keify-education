@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Carousel } from "react-bootstrap";
-import slider1 from "../assets/images/slider1.jpeg";
-import slider2 from "../assets/images/slider2.jpg";
+import slide1 from "../assets/images/slide1.jpg";
+import slider6 from "../assets/images/slider6.jpg"
 
-function Main() {
+function MainCarousel() {
   const [index, setIndex] = useState(0);
 
   const handleSelect = (selectedIndex) => {
@@ -12,25 +12,25 @@ function Main() {
 
   return (
     <div className="">
-      <div className="z-10">
+      <div className="z-10 shadow-md">
         <Carousel activeIndex={index} onSelect={handleSelect} interval={2000}>
           <Carousel.Item>
             <img
-              src={slider1}
+              src={slide1}
               className="d-block w-100 h-[390px]"
               alt="Slider 1"
             />
           </Carousel.Item>
           <Carousel.Item>
             <img
-              src={slider2}
+              src={slider6}
               className="d-block w-100 h-[390px] "
               alt="Slider 2"
             />
           </Carousel.Item>
           <Carousel.Item>
             <img
-              src={slider1}
+              src={slide1}
               className="d-block w-100 h-[390px] "
               alt="Slider 3"
             />
@@ -41,4 +41,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default MainCarousel ;
