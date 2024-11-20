@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { CHANNEL_API_URL, VIDEO_API_URL } from "../../utils/constants";
+import { CHANNEL_API_URL } from "../../utils/constants";
 import VideoCard from "./VideoCard";
 
 const VideoContainer = () => {

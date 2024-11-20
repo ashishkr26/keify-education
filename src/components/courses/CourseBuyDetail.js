@@ -4,7 +4,7 @@ import CourseBuyCard from "./CourseBuyCard";
 const CourseBuyDetail = () => {
   return (
     <div>
-      <div className="bg-black h-[340px] w-full z-10">
+      <div className="bg-pink-500 h-[240px] w-full z-10">
         <h2 className="text-white py-12 px-20 font-semibold">GATE 2024 Weekend Crash Course </h2>
       </div>
       <div className="fixed top-24 right-4 z-20 bg-white shadow-md">

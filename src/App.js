@@ -5,13 +5,13 @@ import { Provider } from "react-redux";
 import appStore from "./utils/store/appStore";
 import Header from "./components/Header";
 import Login from "./components/Login";
-import Course from "./components/courses/Course";
 import CourseBuyDetail from "./components/courses/CourseBuyDetail";
 import SignUp from "./components/SignUp";
 import Cart from "./components/Cart";
 import CourseBuyCard from "./components/courses/CourseBuyCard";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainContainer from "./components/MainContainer";
+import CourseListPage from "./components/couseListPage/CourseListPage";
 
 function App() {
   const appRouter = createBrowserRouter([
@@ -37,9 +37,10 @@ function App() {
           path: "/signup",
           element: <SignUp />,
         },
+        
         {
-          path: "/course",
-          element: <Course />,
+          path: "/courselistpage",
+          element: <CourseListPage />,
         },
 
         {
@@ -48,7 +49,7 @@ function App() {
         },
 
         {
-          path: "/coursebuydetail",
+          path: "/coursebuydetail", 
           element: <CourseBuyDetail />,
         },
         {

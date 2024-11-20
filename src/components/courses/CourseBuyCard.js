@@ -1,4 +1,5 @@
 import React from "react";
+import TimerIcon from '@mui/icons-material/Timer';
 
 const CourseBuyCard = () => {
   return (
@@ -12,7 +13,7 @@ const CourseBuyCard = () => {
       </div>
 
       <div className="text-red-600 text-sm m-2 p-2">
-        ⌚ 1 Day Left fort his Price
+      <TimerIcon/> 1 Day Left For This Price
       </div>
       <div className=" p-2">
         <button className="font-bold border bg-purple-600 p-2 w-80 text-white mr-2">

@@ -9,6 +9,7 @@ import student2 from "../../assets/images/student2.png";
 import { useNavigate } from "react-router-dom";
 // import CourseBuyDetail from "./CourseBuyDetail";
 
+
 const CourseCard = () => {
   const navigate = useNavigate();
   return (

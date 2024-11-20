@@ -25,11 +25,11 @@ const Testimonial = () => {
       <h2 className="mx-2 mt-12 p-2 ">
         See What others are Achieving through our Learnings
       </h2>
-      <div className="flex">
-        {testimonialData.map((item) => {
+      <div key={testimonialData.name}  className="flex">
+        {testimonialData.map((item ) => {
           return (
-            <div
-              key={item.id}
+            <div 
+              key={item.name}
               className="w-1/4 bg-white border border-black h-64 m-4 p-4 rounded-md"
             >
               <div className="user-name flex">
