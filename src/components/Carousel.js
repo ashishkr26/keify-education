@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Carousel } from "react-bootstrap";
 import slide1 from "../assets/images/slide1.jpg";
-import slider6 from "../assets/images/slider6.jpg"
+import slider6 from "../assets/images/slider6.jpg";
 
 function MainCarousel() {
   const [index, setIndex] = useState(0);
@@ -41,4 +41,4 @@ function MainCarousel() {
   );
 }
 
-export default MainCarousel ;
+export default MainCarousel;

@@ -12,7 +12,7 @@ export const courseList = [
     duration: "40 Hours",
     bestSeller: false,
     price: "499",
-    lectures:"373 Lectures"
+    lectures: "373 Lectures",
   },
   {
     thumbnail: student2,
@@ -24,7 +24,7 @@ export const courseList = [
     duration: "60 Hours",
     bestSeller: false,
     price: "699",
-    lectures:"289 Lectures"
+    lectures: "289 Lectures",
   },
   {
     thumbnail: student1,
@@ -36,11 +36,11 @@ export const courseList = [
     duration: "48 Hours",
     bestSeller: false,
     price: "599",
-    lectures:"73 Lectures"
+    lectures: "73 Lectures",
   },
   {
     thumbnail: student2,
-    title: "Mastering Web Development: Basics to Advanced",
+    title: "Mastering Web Development",
     description: " Learn the essentials of JavaScript, HTML, CSS, and React",
     author: "Anand Kumar",
     rating: "4.8",
@@ -48,8 +48,13 @@ export const courseList = [
     duration: "54 Hours",
     bestSeller: false,
     price: "1099",
-    lectures:"18 Lectures"
+    lectures: "18 Lectures",
   },
 ];
 
-export const courseListByName =["GATE","Web Development", "GRE", "Mathematics",];
+export const courseListByName = [
+  "GATE",
+  "Web Development",
+  "GRE",
+  "Mathematics",
+];

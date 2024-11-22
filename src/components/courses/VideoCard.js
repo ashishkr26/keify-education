@@ -1,16 +1,15 @@
-import React from 'react'
+import React from "react";
 
-const VideoCard = ({info}) => {
-
+const VideoCard = ({ info }) => {
   return (
-    <div className='m-2 p-2 w-72 shadow-lg'>
+    <div className="m-2 p-2 w-72 shadow-lg">
       <ul>
         <li>Title</li>
         <li>channelTitle</li>
         <li>viewCount</li>
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default VideoCard
+export default VideoCard;

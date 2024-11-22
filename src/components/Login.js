@@ -2,7 +2,6 @@ import React from "react";
 import google from "../assets/images/google.jpg";
 
 const Login = () => {
-
   return (
     <div className="">
       <div className="w-[420px] shadow-lg absolute right-0 left-0 mx-auto my-28 bg-opacity-80 p-12 rounded-md">
@@ -28,8 +27,10 @@ const Login = () => {
 
             <div className="my-4 mx-4">
               <span>Don't have an Account, Create Account </span>
-              <span onClick={()=>{}} className=" mx-2 text-blue-600 underline cursor-pointer">
-               
+              <span
+                onClick={() => {}}
+                className=" mx-2 text-blue-600 underline cursor-pointer"
+              >
                 Sign Up
               </span>
             </div>

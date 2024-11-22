@@ -28,7 +28,7 @@ const Footer = () => {
         <div className="p-4">
           <ul>
             <li className="">
-              <h6 >About Keify</h6>
+              <h6>About Keify</h6>
             </li>
             <li>About</li>
             <li>Policy Terms</li>

@@ -6,7 +6,6 @@ const Body = () => {
   return (
     <div className="">
       <SideBar />
-
       <div className="">
         <Outlet />
       </div>

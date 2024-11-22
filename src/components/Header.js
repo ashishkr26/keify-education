@@ -7,14 +7,32 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/store/appSlice";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { courseList } from "../utils/mockData/courseListPageData";
 
 const Header = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [isDialogOpen, SetIsDialogOpen] = useState(false);
 
   const isMenuOpen = useSelector((state) => state.app.isMenuOpen);
 
-  const [isDialogOpen, SetIsDialogOpen] = useState(false);
+  const [searchText, setSearchText] = useState("");
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      console.log(searchText);
+      const matchedCourse = courseList.find((course) =>
+        course.title.toLowerCase().includes(searchText.toLowerCase())
+      );
+
+      console.log(matchedCourse);
+      if (matchedCourse) {
+        navigate("/courselistpage");
+      } else {
+        alert("Course not found!");
+      }
+    }
+  };
 
   return (
     <div className=" h-[84px] pt-2 shadow-lg  z-20  flex sticky top-0 bg-white">
@@ -32,7 +50,6 @@ const Header = () => {
         </label>
       </Link>
 
-    
       <div className="">
         <ul
           tabIndex={0}
@@ -44,36 +61,40 @@ const Header = () => {
           // }}
           className="flex justify-items-end  mt-1 p-2 text-lg"
         >
-          <li className=" px-2 py-1 ml-4 hover:scale-110 duration-200 font-bold cursor-pointer ">
+          <li className=" px-2 py-1 ml-4 hover:scale-110 duration-200 font-semibold cursor-pointer">
             Courses
             <span onClick={() => SetIsDialogOpen(!isDialogOpen)}>
               <KeyboardArrowDownIcon />
             </span>
-            {isDialogOpen ? <CourseDailog isDialogOpen={isDialogOpen} SetIsDialogOpen={SetIsDialogOpen} /> : null}
+            {isDialogOpen ? (
+              <CourseDailog
+                isDialogOpen={isDialogOpen}
+                SetIsDialogOpen={SetIsDialogOpen}
+              />
+            ) : null}
           </li>
           <div className=" p-2 mx-10 ">
-
-        <input
-          className="h-12 w-[440px] border border-black -mt-6  rounded-l-full rounded-r-full px-4 hover:bg-gray-100 "
-          type="text"
-          placeholder="Search"
-          onChange={(e) => {
-            // SetSearchText(e.target.value);
-            // console.log(searchText);
-          }}
-        />
-      </div>
+            <input
+              className="h-12 w-[440px] border border-black -mt-6  rounded-l-full rounded-r-full px-4 hover:bg-gray-100 "
+              type="text"
+              placeholder="Search"
+              onChange={(e) => setSearchText(e.target.value)}
+              onKeyDown={handleKeyPress}
+            />
+          </div>
 
           <li className="p-2 cursor-pointer hover:scale-110 duration-200 font-semibold">
             Teach On Keify
           </li>
           <li className="p-2">
-             <Link to="/cart"><img
-              onClick={() => {}}
-              className="h-10 px-2 -mt-2 cursor-pointer hover:scale-110 duration-200 "
-              alt="cart"
-              src={cart}
-            /></Link>
+            <Link to="/cart">
+              <img
+                onClick={() => {}}
+                className="h-10 px-2 -mt-2 cursor-pointer hover:scale-110 duration-200 "
+                alt="cart"
+                src={cart}
+              />
+            </Link>
           </li>
 
           <li className="p-2 mt-1">
@@ -102,10 +123,10 @@ const Header = () => {
 
 export default Header;
 
-const CourseDailog = ({isDialogOpen, SetIsDialogOpen }) => {
+const CourseDailog = ({ isDialogOpen, SetIsDialogOpen }) => {
   const [isDialogOptionOpen, SetIsDialogOption] = useState(false);
   return (
-    <ul className="absolute bg-white w-72 my-3 mx-2 p-2 shadow-md border border-gray-600">
+    <ul className="absolute  bg-white w-72 my-3 mx-2 p-2 shadow-md border border-gray-600">
       <li className="py-2 ">
         <div className="flex justify-between">
           <span>Competitive Exam </span>
@@ -118,19 +139,16 @@ const CourseDailog = ({isDialogOpen, SetIsDialogOpen }) => {
           </span>
         </div>
         {isDialogOptionOpen && isDialogOpen ? (
-          <ul className="ml-[279px] -mt-11 bg-gray-100 w-72 absolute border border-gray-100 shadow-sm ">
+          <ul className="ml-[279px] -mt-11 bg-gray-300 w-72 h-[440px] absolute border border-gray-100 shadow-sm ">
             <li className="py-1 ml-10">
               <Link
-               
                 to="/courselistpage"
                 onClick={(e) => {
-               
                   setTimeout(() => {
                     SetIsDialogOption(false);
                     SetIsDialogOpen(false);
                   }, 100); // Delay submenu closure
                 }}
-              
                 className="border no-underline text-black border-black rounded-md p-1 bg-gray-50 block w-[144px] text-center "
               >
                 GATE

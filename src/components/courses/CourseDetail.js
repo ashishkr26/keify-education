@@ -5,6 +5,7 @@ import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 import CourseCard from "./CourseCard";
+import { courseList } from "../../utils/mockData/courseListPageData";
 
 const CourseDetail = () => {
   const [value, setValue] = React.useState("1");
@@ -12,6 +13,7 @@ const CourseDetail = () => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  console.log(courseList);
   return (
     <div className="mt-4 ">
       <h3 className="px-6 py-2">All The Skills You Need</h3>
@@ -29,18 +31,11 @@ const CourseDetail = () => {
             </TabList>
           </Box>
           <div className="flex justify-between">
-            <TabPanel value="1">
-              <CourseCard />
-            </TabPanel>
-            <TabPanel value="1">
-              <CourseCard />
-            </TabPanel>
-            <TabPanel value="1">
-              <CourseCard />
-            </TabPanel>
-            <TabPanel value="1">
-              <CourseCard />
-            </TabPanel>
+            {courseList.map((course) => (
+              <TabPanel value="1">
+                <CourseCard key={course.title} info={course} />
+              </TabPanel>
+            ))}
           </div>
           <div className="flex justify-between">
             <TabPanel value="2">

@@ -18,6 +18,11 @@ const Testimonial = () => {
       comment:
         "do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, Sed consectetur adipiscing elit. ",
     },
+    {
+      name: "Wilson Rome",
+      comment:
+        "do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, Sed consectetur adipiscing elit. ",
+    },
   ];
 
   return (
@@ -25,12 +30,12 @@ const Testimonial = () => {
       <h2 className="mx-2 mt-12 p-2 ">
         See What others are Achieving through our Learnings
       </h2>
-      <div key={testimonialData.name}  className="flex">
-        {testimonialData.map((item ) => {
+      <div key={testimonialData.name} className="flex">
+        {testimonialData.map((item) => {
           return (
-            <div 
+            <div
               key={item.name}
-              className="w-1/4 bg-white border border-black h-64 m-4 p-4 rounded-md"
+              className="w-64 bg-white border border-black h-64 m-4 p-4 rounded-md"
             >
               <div className="user-name flex">
                 <div className="bg-gray-900 w-12 h-12 text-white rounded-full text-center pt-[10px]">
@@ -50,7 +55,6 @@ const Testimonial = () => {
       <button className="w-10 h-10 rounded-full ml-2  bg-gray-600  text-white ">{""}</button>
       <button className="w-10 h-10 rounded-full bg-gray-600  text-white ml-[1160px]">{""}</button>
       </div> */}
-      
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import StarsIcon from '@mui/icons-material/Stars';
+import StarsIcon from "@mui/icons-material/Stars";
 import { Link } from "react-router-dom";
 
 const CourseListCard = (props) => {
@@ -24,7 +24,7 @@ const CourseListCard = (props) => {
         <div className="text-base font-semibold pt-1">{description}</div>
         <div className="text-sm font-semibold pt-1">{author}</div>
         <div className="text-sm font-semibold pt-1">
-          Ratings {rating} < StarsIcon fontSize="small"/> ({aggregateRating})
+          Ratings {rating} <StarsIcon fontSize="small" /> ({aggregateRating})
         </div>
         <div className="text-sm font-semibold pt-1">
           {" "}
@@ -32,10 +32,15 @@ const CourseListCard = (props) => {
         </div>
       </div>
       <div className="ml-10 absolute right-0">
-        <div className="font-bold text-2xl col-span-1 my-2 w-32 ">₹ {price}</div>
+        <div className="font-bold text-2xl col-span-1 my-2 w-32 ">
+          ₹ {price}
+        </div>
         <div>
-          <Link to="/coursebuydetail" style={{ width: '8rem', display: 'block', textAlign: "center" }} className="bg-blue-600  no-underline mx-2 p-2 rounded-md text-white  mt-8 shadow-md">
-           
+          <Link
+            to="/coursebuydetail"
+            style={{ width: "8rem", display: "block", textAlign: "center" }}
+            className="bg-blue-600  no-underline mx-2 p-2 rounded-md text-white  mt-8 shadow-md"
+          >
             Explore
           </Link>
         </div>

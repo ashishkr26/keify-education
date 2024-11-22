@@ -9,14 +9,26 @@ import student2 from "../../assets/images/student2.png";
 import { useNavigate } from "react-router-dom";
 // import CourseBuyDetail from "./CourseBuyDetail";
 
+const CourseCard = (props) => {
+  const {
+    thumbnail,
+    title,
+    description,
+    author,
+    rating,
+    aggregateRating,
+    duration,
+    lectures,
+    price,
+  } = props.info;
+  console.log(thumbnail);
 
-const CourseCard = () => {
   const navigate = useNavigate();
   return (
-    <Card sx={{ maxWidth: 310 }}>
+    <Card sx={{ maxWidth: 310, height: "470px" }}>
       <CardMedia
-        sx={{ height: 280, marginLeft: "" }}
-        image={student2}
+        sx={{ height: 260, marginLeft: "" }}
+        image={thumbnail}
         title="green iguana"
       />
       <CardContent>
@@ -26,11 +38,10 @@ const CourseCard = () => {
           variant="h5"
           component="div"
         >
-          GATE
+          {title}
         </Typography>
         <Typography variant="body2" sx={{ color: "text.secondary" }}>
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+          {description}
         </Typography>
       </CardContent>
       <CardActions>

@@ -50,8 +50,7 @@ const SignUp = () => {
         <div className="w-1/3 bg-purple-100 h-12 m-2 p-2">
           Already have an account?{" "}
           <span
-            onClick={() => {
-            }}
+            onClick={() => {}}
             className="text-blue-600 underline cursor-pointer"
           >
             Log in
