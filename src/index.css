@@ -7,3 +7,49 @@
       font-family: "Proxima Nova", system-ui, sans-serif;
     }
   }
+
+/* Default styles for inactive slides */
+.testimonial-swiper .swiper-slide {
+  opacity: 0;
+  transform: scale(1.2) translateY(0px) translateX(0px); /* Slightly pushed down and left */
+  z-index: 1;
+  transition: all 0.5s ease-in-out;
+}
+
+
+/* Active slide styles */
+.testimonial-swiper .swiper-slide-active {
+  opacity: 1;
+  transform: scale(1) translateY(30) translateX(30); /* Fully visible and centered */
+  z-index: 3;
+  
+}
+
+/* Next and previous slide styles (left-right) */
+.testimonial-swiper .swiper-slide-next,
+.testimonial-swiper .swiper-slide-prev {
+  opacity: 0;
+  transform: scale(1.2) translateY(20px) translateX(20px); /* Slightly larger and positioned a bit */
+  z-index: 2;
+}
+
+/* Stacked effect (top-bottom visibility) */
+.swiper-slide-item {
+  position: relative;
+  overflow: visible;
+  transform-origin: center; /* Ensure scaling and translation happen from the center */
+  
+}
+
+/* Add a 3D-like effect on the testimonial items */
+.testimonial-swiper .swiper-slide-next {
+  transform: scale(1.5) translateY(40px) translateX(30px); /* Shift to top right */
+}
+
+.testimonial-swiper .swiper-slide-prev {
+  transform: scale(1.5) translateY(40px) translateX(30px); /* Shift to bottom left */
+}
+
+
+
+  

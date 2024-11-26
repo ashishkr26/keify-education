@@ -16,11 +16,13 @@ const CourseListCard = (props) => {
     isPaid,
   } = props.info;
   return (
-    <div className="mx-4 my-1 p-2 h-52 border border-gray-300 grid grid-flow-col  shadow-md">
-      <div>
+    <div className="mx-4 my-4 p-2 h-52 border border-gray-300 grid grid-flow-col  shadow-md">
+
+      <div className="col-span-1">
         <img src={thumbnail} className="w-48 h-48" alt="thumbnail" />
       </div>
-      <div className="course-list mx-2 p-2 col-span-11">
+
+      <div className="course-list mx-2 p-2 col-span-10">
         <div className="font-bold text-2xl ">{title}</div>
         <div className="text-base font-semibold pt-1">{description}</div>
         <div className="text-base font-semibold pt-1 text-pink-600">{author}</div>
@@ -33,11 +35,12 @@ const CourseListCard = (props) => {
           Total {duration} | {lectures}
         </div>
       </div>
-      <div className="ml-10 absolute right-0">
-        <div className="font-bold text-2xl col-span-1 my-2 ml-8 w-32  ">
+
+      <div className="col-span-1 absolute right-0">
+        <div className="font-bold text-2xl my-2 ml-8 ">
           ₹{price} 
         </div>
-        <div className="">
+        <div className=" ">
           <Link
             to="/coursebuydetail"
             style={{ width: "8rem", display: "block", textAlign: "center" }}

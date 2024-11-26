@@ -31,7 +31,7 @@ const Header = () => {
   };
 
   return (
-    <div className=" h-[84px] pt-2 shadow-lg  z-20  flex flex-grow sticky top-0 bg-white">
+    <div className=" h-[80px] pt-2 shadow-lg  z-20  flex flex-grow sticky top-0 bg-white">
       <img
         onClick={() => {
           dispatch(toggleMenu());

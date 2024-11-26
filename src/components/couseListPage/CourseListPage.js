@@ -3,7 +3,7 @@ import CourseListCard from "./CourseListCard";
 import { courseList } from "../../utils/mockData/courseListPageData";
 
 const CourseListPage = () => {
-  const buttonList = ["Most Rated", "Paid Course", "Free Course", "Price", "Our Partners"];
+  const buttonList = ["All Courses", "Most Rated", "Paid Course", "Free Course", "Price", "Our Partners"];
   const [filteredCourse, setFilteredCourse] = useState(courseList);
 
   const handleFilter = (filterType) => {
@@ -36,12 +36,12 @@ const CourseListPage = () => {
   return (
     <div className="">
       <div className="grid grid-flow-row">
-        <div className="filter-buttons p-2 flex flex-row justify-center">
-          <label className="border border-black p-2 my-2 rounded-lg bg-black text-white font-semibold">Filters</label>
+        <div className="filter-buttons p-2 flex flex-row justify-center sticky top-20 z-10 shadow-sm bg-white">
+          <label className="border border-black py-2 px-4 my-2 rounded-lg bg-black text-white font-semibold ">Filters</label>
           {buttonList.map((buttonItem) => (
             <button
               onClick={() => handleFilter(buttonItem)}
-              className="border border-black bg-fuchsia-200 rounded-2xl px-3 py-2 my-2 mx-12 font-semibold"
+              className="border border-black bg-fuchsia-200 rounded-2xl px-3 py-2 my-2 mx-8 font-semibold hover:text-white hover:bg-fuchsia-500"
             >
               {buttonItem}
             </button>
