@@ -31,7 +31,7 @@ const CourseDetail = () => {
             </TabList>
           </Box>
           <div className="flex justify-between">
-            {courseList.map((course) => (
+            {courseList.slice(0,4).map((course) => (
               <TabPanel value="1">
                 <CourseCard key={course.title} info={course} />
               </TabPanel>

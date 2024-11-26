@@ -13,6 +13,7 @@ export const courseList = [
     bestSeller: false,
     price: "499",
     lectures: "373 Lectures",
+    isPaid: true,
   },
   {
     thumbnail: student2,
@@ -25,10 +26,11 @@ export const courseList = [
     bestSeller: false,
     price: "699",
     lectures: "289 Lectures",
+    isPaid: true,
   },
   {
     thumbnail: student1,
-    title: "The Complete 2024 GRE Course",
+    title: "The Complete 2024 DSAT Course",
     description: "Quantitative Reasoning",
     author: "Ashish Kumar",
     rating: "4.1",
@@ -37,6 +39,7 @@ export const courseList = [
     bestSeller: false,
     price: "599",
     lectures: "73 Lectures",
+    isPaid: true,
   },
   {
     thumbnail: student2,
@@ -49,6 +52,33 @@ export const courseList = [
     bestSeller: false,
     price: "1099",
     lectures: "18 Lectures",
+    isPaid: false,
+  },
+  {
+    thumbnail: student1,
+    title: "The Complete 2024 GRE Course",
+    description: "Verbal Reasoning",
+    author: "Roshan Kumar",
+    rating: "4.7",
+    aggregateRating: "13325",
+    duration: "48 Hours",
+    bestSeller: true,
+    price: "999",
+    lectures: "193 Lectures",
+    isPaid: true,
+  },
+  {
+    thumbnail: student2,
+    title: "The Complete 2024 GMAT Course",
+    description: "Quantitative Reasoning",
+    author: "Sonal Chauhan",
+    rating: "4.5",
+    aggregateRating: "8925",
+    duration: "70 Hours",
+    bestSeller: true,
+    price: "1999",
+    lectures: "90 Lectures",
+    isPaid: false,
   },
 ];
 
@@ -57,4 +87,26 @@ export const courseListByName = [
   "Web Development",
   "GRE",
   "Mathematics",
+];
+
+export const faqList = [
+  {
+    id: 1,
+    ques: "What is this Course",
+    ans: "Power Batch is an unique Product that offers Live Interactive Sessions with Best faculties of PW where you can experience instant resolution to your doubts by your class teacher.",
+  }, {
+    id: 2,
+    ques: "What is this Course",
+    ans: "Power Batch is an unique Product that offers Live Interactive Sessions with Best faculties of PW where you can experience instant resolution to your doubts by your class teacher.",
+  },
+  {
+    id: 3,
+    ques: "What is this Course",
+    ans: "Power Batch is an unique Product that offers Live Interactive Sessions with Best faculties of PW where you can experience instant resolution to your doubts by your class teacher.",
+  },
+  {
+    id: 4,
+    ques: "What is this Course",
+    ans: "Power Batch is an unique Product that offers Live Interactive Sessions with Best faculties of PW where you can experience instant resolution to your doubts by your class teacher.",
+  },
 ];

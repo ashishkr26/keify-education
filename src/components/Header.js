@@ -3,8 +3,8 @@ import cart from "../assets/images/cart.png";
 import hmb1 from "../assets/images/hmb1.png";
 import hmb2 from "../assets/images/hmb2.png";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/store/appSlice";
 import { Link, useNavigate } from "react-router-dom";
@@ -14,18 +14,14 @@ const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [isDialogOpen, SetIsDialogOpen] = useState(false);
-
   const isMenuOpen = useSelector((state) => state.app.isMenuOpen);
 
   const [searchText, setSearchText] = useState("");
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
-      console.log(searchText);
       const matchedCourse = courseList.find((course) =>
         course.title.toLowerCase().includes(searchText.toLowerCase())
       );
-
-      console.log(matchedCourse);
       if (matchedCourse) {
         navigate("/courselistpage");
       } else {
@@ -35,12 +31,12 @@ const Header = () => {
   };
 
   return (
-    <div className=" h-[84px] pt-2 shadow-lg  z-20  flex sticky top-0 bg-white">
+    <div className=" h-[84px] pt-2 shadow-lg  z-20  flex flex-grow sticky top-0 bg-white">
       <img
         onClick={() => {
           dispatch(toggleMenu());
         }}
-        className="h-8 px-2 mt-2 cursor-pointer hover:scale-110 duration-200  "
+        className="h-8 px-2 mt-2  cursor-pointer hover:scale-110 duration-200  "
         alt="hmb"
         src={isMenuOpen ? hmb2 : hmb1}
       />
@@ -61,10 +57,13 @@ const Header = () => {
           // }}
           className="flex justify-items-end  mt-1 p-2 text-lg"
         >
-          <li className=" px-2 py-1 ml-4 hover:scale-110 duration-200 font-semibold cursor-pointer">
+          <li className=" px-2 py-1 ml-4 hover:scale-110 duration-200 font-semibold cursor-pointer"
+           onMouseEnter={() => SetIsDialogOpen(true)}
+           onMouseLeave={() => SetIsDialogOpen(false)}
+          >
             Courses
-            <span onClick={() => SetIsDialogOpen(!isDialogOpen)}>
-              <KeyboardArrowDownIcon />
+            <span >
+              {isDialogOpen?<KeyboardArrowUpIcon />:<KeyboardArrowDownIcon />}
             </span>
             {isDialogOpen ? (
               <CourseDailog
@@ -101,7 +100,7 @@ const Header = () => {
             <Link
               to="/login"
               aria-label="Login"
-              className="w-20 border border-black ml-10 px-2 py-1 font-semibold hover:bg-gray-200 hover:scale-110 duration-200 no-underline text-black "
+              className="border border-black ml-10 px-2 py-1 font-semibold hover:bg-gray-200 hover:scale-110 duration-200 no-underline text-black "
             >
               Login
             </Link>
@@ -112,7 +111,7 @@ const Header = () => {
               to="signup"
               className="border border-black px-2 py-1 text-white bg-black font-semibold hover:bg-white hover:text-black z-20 hover:scale-110 duration-200 no-underline"
             >
-              Sign Up
+              SignUp
             </Link>
           </li>
         </ul>
@@ -125,20 +124,23 @@ export default Header;
 
 const CourseDailog = ({ isDialogOpen, SetIsDialogOpen }) => {
   const [isDialogOptionOpen, SetIsDialogOption] = useState(false);
+  console.log(isDialogOpen);
   return (
     <ul className="absolute  bg-white w-72 my-3 mx-2 p-2 shadow-md border border-gray-600">
       <li className="py-2 ">
         <div className="flex justify-between">
           <span>Competitive Exam </span>
           <span
-            onClick={() => {
-              SetIsDialogOption(!isDialogOptionOpen);
-            }}
+            // onClick={() => {
+            //   SetIsDialogOption(!isDialogOptionOpen);
+            // }}
+            onMouseEnter={()=>{SetIsDialogOption(true)}}
+            // onMouseLeave={()=>SetIsDialogOption(false)}
           >
             <ChevronRightIcon />
           </span>
         </div>
-        {isDialogOptionOpen && isDialogOpen ? (
+        {isDialogOptionOpen  ? (
           <ul className="ml-[279px] -mt-11 bg-gray-300 w-72 h-[440px] absolute border border-gray-100 shadow-sm ">
             <li className="py-1 ml-10">
               <Link

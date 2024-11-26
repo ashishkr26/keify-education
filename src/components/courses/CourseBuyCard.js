@@ -23,7 +23,7 @@ const CourseBuyCard = () => {
       <div className="p-2">APPLY COUPON</div>
       <div className="p-2 w-full ml-1">
         <input
-          placeholder="Enter Copon Code"
+          placeholder="Enter Coupon Code"
           className="border border-black h-10 w-64 p-2"
           type="text"
         />
