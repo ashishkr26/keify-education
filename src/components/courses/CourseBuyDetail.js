@@ -33,11 +33,11 @@ const CourseBuyDetail = () => {
       </div>
 
       {/* FAQ */}
-      <div className="border border-gray-700 w-3/5 m-4 p-4 h-auto shadow-md flex flex-grow flex-col justify-items-center ">
+      <div className="border border-gray-700 w-3/5 m-4 p-4 h-auto flex flex-grow flex-col justify-items-center ">
         <h4 className="m-2 p-2">FAQ- Frequently Asked Question</h4>
         {faqList.map((faq, index) => (
           <div key={faq.id} className="p-2">
-            <div className="flex justify-between text-xl px-2 py-2 bg-gray-100">
+            <div className="border border-black bg-gray-100 flex justify-between text-xl px-2 py-2  shadow-md rounded-md">
               <span>Q: {faq.ques}</span>
 
               <p
