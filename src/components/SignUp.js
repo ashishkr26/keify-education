@@ -19,6 +19,7 @@ const SignUp = () => {
         </div>
         <div>
           <input
+            
             input="Email"
             placeholder="Email"
             className="border border-black w-1/3 h-14 m-2 p-2"
@@ -26,6 +27,7 @@ const SignUp = () => {
         </div>
         <div>
           <input
+            
             input="Password"
             placeholder="Password"
             className="border border-black w-1/3 h-14 m-2 p-2"
