@@ -7,7 +7,8 @@ const Login = () => {
   const email = useRef();
   const password = useRef();
 
-  const handleSignIn = () => {
+  const handleSignIn = (e) => {
+    e.preventDefault();
     if (!email.current.value || !password.current.value) {
       setErrorMessage("Email and password cannot be empty.");
       return;
@@ -29,6 +30,11 @@ const Login = () => {
         <label className="text-black text-2xl m-2 p-2 font-semibold">
           Sign Into Your Account
         </label>
+        <p className="text-xs text-red-600">
+          {errorMessage === "Email and password cannot be empty."
+            ? "Email and password cannot be empty."
+            : null}
+        </p>
         <div className="">
           <label className="flex text-sm text-blue-600">
             Enter Your Email Id
@@ -39,7 +45,11 @@ const Login = () => {
             type="text"
             placeholder="Email Id"
           />
-          <p className="text-xs text-red-600">{errorMessage}</p>
+          <p className="text-xs text-red-600">
+            {errorMessage === "Email id is not valid"
+              ? "Email id is not valid"
+              : null}
+          </p>
           <label className="flex text-sm text-blue-600">
             Enter your Password
           </label>
@@ -49,6 +59,12 @@ const Login = () => {
             type="password"
             placeholder="Password"
           />
+          <p className="text-xs text-red-600">
+            {errorMessage === "Password is not valid"
+              ? "Password is not valid"
+              : null}
+          </p>
+
           <div className="flex justify-center my-2">
             <button
               onClick={handleSignIn}
