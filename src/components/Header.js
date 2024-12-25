@@ -15,6 +15,7 @@ const Header = () => {
   const navigate = useNavigate();
   const [isDialogOpen, SetIsDialogOpen] = useState(false);
   const isMenuOpen = useSelector((state) => state.app.isMenuOpen);
+  const isHeaderOpen = useSelector((state) => state.app.isHeaderOpen);
 
   const [searchText, setSearchText] = useState("");
   const handleKeyPress = (e) => {
@@ -31,92 +32,102 @@ const Header = () => {
   };
 
   return (
-    <div className=" h-[80px] pt-2 shadow-lg  z-20  flex flex-grow sticky top-0 bg-white">
-      <img
-        onClick={() => {
-          dispatch(toggleMenu());
-        }}
-        className="h-8 px-2 mt-2  cursor-pointer hover:scale-110 duration-200  "
-        alt="hmb"
-        src={isMenuOpen ? hmb2 : hmb1}
-      />
-      <Link className="text-black" to="/">
-        <label className="text-3xl font-bold  pt-2 cursor-pointer hover:scale-110 duration-200">
-          Keify
-        </label>
-      </Link>
+    <>
+      {isHeaderOpen && (
+        <div className=" h-[80px] pt-2 shadow-lg  z-20  flex flex-grow sticky top-0 bg-white">
+          <img
+            onClick={() => {
+              dispatch(toggleMenu());
+            }}
+            className="h-8 px-2 mt-2  cursor-pointer hover:scale-110 duration-200  "
+            alt="hmb"
+            src={isMenuOpen ? hmb2 : hmb1}
+          />
+          <Link className="text-black" to="/">
+            <label className="text-3xl font-bold  pt-2 cursor-pointer hover:scale-110 duration-200">
+              Keify
+            </label>
+          </Link>
 
-      <div className="">
-        <ul
-          tabIndex={0}
-          // onFocus={() => {
-          //   SetIsDialogOpen(true);
-          // }}
-          // onBlur={() => {
-          //   SetIsDialogOpen(false);
-          // }}
-          className="flex justify-items-end  mt-1 p-2 text-lg"
-        >
-          <li className=" px-2 py-1 ml-4 hover:scale-110 duration-200 font-semibold cursor-pointer"
-           onMouseEnter={() => SetIsDialogOpen(true)}
-           onMouseLeave={() => SetIsDialogOpen(false)}
-          >
-            Courses
-            <span >
-              {isDialogOpen?<KeyboardArrowUpIcon />:<KeyboardArrowDownIcon />}
-            </span>
-            {isDialogOpen ? (
-              <CourseDailog
-                isDialogOpen={isDialogOpen}
-                SetIsDialogOpen={SetIsDialogOpen}
-              />
-            ) : null}
-          </li>
-          <div className=" p-2 mx-10 ">
-            <input
-              className="h-12 w-[440px] border border-black -mt-6  rounded-l-full rounded-r-full px-4 hover:bg-gray-100 "
-              type="text"
-              placeholder="Search"
-              onChange={(e) => setSearchText(e.target.value)}
-              onKeyDown={handleKeyPress}
-            />
+          <div className="">
+            <ul
+              tabIndex={0}
+              // onFocus={() => {
+              //   SetIsDialogOpen(true);
+              // }}
+              // onBlur={() => {
+              //   SetIsDialogOpen(false);
+              // }}
+              className="flex justify-items-end  mt-1 p-2 text-lg"
+            >
+              <li
+                className=" px-2 py-1 ml-4 hover:scale-110 duration-200 font-semibold cursor-pointer"
+                onMouseEnter={() => SetIsDialogOpen(true)}
+                onMouseLeave={() => SetIsDialogOpen(false)}
+              >
+                Courses
+                <span>
+                  {isDialogOpen ? (
+                    <KeyboardArrowUpIcon />
+                  ) : (
+                    <KeyboardArrowDownIcon />
+                  )}
+                </span>
+                {isDialogOpen ? (
+                  <CourseDailog
+                    isDialogOpen={isDialogOpen}
+                    SetIsDialogOpen={SetIsDialogOpen}
+                  />
+                ) : null}
+              </li>
+              <div className=" p-2 mx-10 ">
+                <input
+                  className="h-12 w-[440px] border border-black -mt-6  rounded-l-full rounded-r-full px-4 hover:bg-gray-100 "
+                  type="text"
+                  placeholder="Search"
+                  onChange={(e) => setSearchText(e.target.value)}
+                  onKeyDown={handleKeyPress}
+                />
+              </div>
+
+              <li className="p-2 cursor-pointer hover:scale-110 duration-200 font-semibold">
+                Teach On Keify
+              </li>
+              <li className="p-2">
+                <Link to="/cart">
+                  <img
+                    onClick={() => {}}
+                    className="h-10 px-2 -mt-2 cursor-pointer hover:scale-110 duration-200 "
+                    alt="cart"
+                    src={cart}
+                  />
+                </Link>
+              </li>
+
+              <li className="p-2 mt-1">
+                <Link
+                  to="/login"
+                  aria-label="Login"
+                  className="border border-black ml-10 px-2 py-1 font-semibold hover:bg-gray-200 hover:scale-110 duration-200 no-underline text-black "
+                >
+                  Login
+                </Link>
+              </li>
+
+              <li className="p-2 mt-1">
+                <Link
+                  to="signup"
+                  className="border border-black px-2 py-1 text-white bg-black font-semibold hover:bg-white hover:text-black z-20 hover:scale-110 duration-200 no-underline"
+                >
+                  SignUp
+                </Link>
+              </li>
+            </ul>
           </div>
-
-          <li className="p-2 cursor-pointer hover:scale-110 duration-200 font-semibold">
-            Teach On Keify
-          </li>
-          <li className="p-2">
-            <Link to="/cart">
-              <img
-                onClick={() => {}}
-                className="h-10 px-2 -mt-2 cursor-pointer hover:scale-110 duration-200 "
-                alt="cart"
-                src={cart}
-              />
-            </Link>
-          </li>
-
-          <li className="p-2 mt-1">
-            <Link
-              to="/login"
-              aria-label="Login"
-              className="border border-black ml-10 px-2 py-1 font-semibold hover:bg-gray-200 hover:scale-110 duration-200 no-underline text-black "
-            >
-              Login
-            </Link>
-          </li>
-
-          <li className="p-2 mt-1">
-            <Link
-              to="signup"
-              className="border border-black px-2 py-1 text-white bg-black font-semibold hover:bg-white hover:text-black z-20 hover:scale-110 duration-200 no-underline"
-            >
-              SignUp
-            </Link>
-          </li>
-        </ul>
-      </div>
-    </div>
+         
+        </div>
+      )}
+    </>
   );
 };
 
@@ -134,13 +145,15 @@ const CourseDailog = ({ isDialogOpen, SetIsDialogOpen }) => {
             // onClick={() => {
             //   SetIsDialogOption(!isDialogOptionOpen);
             // }}
-            onMouseEnter={()=>{SetIsDialogOption(true)}}
+            onMouseEnter={() => {
+              SetIsDialogOption(true);
+            }}
             // onMouseLeave={()=>SetIsDialogOption(false)}
           >
             <ChevronRightIcon />
           </span>
         </div>
-        {isDialogOptionOpen  ? (
+        {isDialogOptionOpen ? (
           <ul className="ml-[279px] -mt-11 bg-gray-300 w-72 h-[440px] absolute border border-gray-100 shadow-sm ">
             <li className="py-1 ml-10">
               <Link

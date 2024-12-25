@@ -9,8 +9,8 @@ const TestHome = () => {
       </div>
       <div className="w-1/2 border border-slate-950 m-4 h-80 shadow-inner">
         {testList.map((item) => (
-          <div className="flex m-2  p-2 justify-between">
-            <div className="bg-green-100 flex justify-center items-center p-2 rounded-md ">
+          <div className="flex m-2  p-2 justify-between bg-green-100">
+            <div className=" flex justify-center items-center p-2 rounded-md ">
               FULL LENGTH {item}
             </div>
             <div>
@@ -18,6 +18,7 @@ const TestHome = () => {
                 Start
               </button>
             </div>
+           
           </div>
         ))}
       </div>

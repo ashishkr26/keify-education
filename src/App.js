@@ -13,6 +13,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainContainer from "./components/MainContainer";
 import CourseListPage from "./components/couseListPage/CourseListPage";
 import TestHome from "./components/testSeries/TestHome"
+import TestLayout from "./components/testSeries/TestLayout";
 
 function App() {
   const appRouter = createBrowserRouter([
@@ -60,6 +61,10 @@ function App() {
         {
           path: "/test-series",
           element: <TestHome />,
+        },
+        {
+          path: "/test-layout",
+          element: <TestLayout />,
         },
       ],
     },
