@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { test01 } from "../../utils/mockData/test01";
 import { useDispatch } from "react-redux";
 import { toggleHeader } from "../../utils/store/appSlice";
+import { useNavigate } from "react-router-dom";
 
 const TestLayout = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate()
 
   useEffect(() => {
     dispatch(toggleHeader()); // Hide header
@@ -20,8 +22,15 @@ const TestLayout = () => {
   const handleNext = () => {
     if (currentQuestionIndex < questionList.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
+    } else {
+      // If it's the last question, navigate to the test analysis page
+    handleSubmit()
     }
   };
+  
+  const handleSubmit =()=>{
+    navigate("/test-analysis")
+  }
 
   const handlePrev = () => {
     if (currentQuestionIndex > 0) {
@@ -107,13 +116,9 @@ const TestLayout = () => {
             <button
               onClick={handleNext}
               disabled={currentQuestionIndex === questionList.length - 1}
-              className={`mr-10 px-4 py-2 bg-gray-400 text-black ${
-                currentQuestionIndex === questionList.length - 1
-                  ? "cursor-not-allowed"
-                  : "cursor-pointer"
-              }`}
+              className={`mr-10 px-4 py-2 bg-gray-400 text-black cursor-pointer `}
             >
-              Next
+            {currentQuestionIndex === questionList.length - 1 ? "Submit" : "Next"}  
             </button>
           </div>
         </div>

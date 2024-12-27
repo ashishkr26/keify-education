@@ -12,8 +12,9 @@ import CourseBuyCard from "./components/courses/CourseBuyCard";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainContainer from "./components/MainContainer";
 import CourseListPage from "./components/couseListPage/CourseListPage";
-import TestHome from "./components/testSeries/TestHome"
+import TestHome from "./components/testSeries/TestHome";
 import TestLayout from "./components/testSeries/TestLayout";
+import TestSubmitPage from "./components/testSeries/TestSubmitPage";
 
 function App() {
   const appRouter = createBrowserRouter([
@@ -39,7 +40,7 @@ function App() {
           path: "/signup",
           element: <SignUp />,
         },
-        
+
         {
           path: "/courselistpage",
           element: <CourseListPage />,
@@ -51,7 +52,7 @@ function App() {
         },
 
         {
-          path: "/coursebuydetail", 
+          path: "/coursebuydetail",
           element: <CourseBuyDetail />,
         },
         {
@@ -66,13 +67,20 @@ function App() {
           path: "/test-layout",
           element: <TestLayout />,
         },
+        {
+          path: "/test-analysis",
+          element: <TestSubmitPage />,
+        },
       ],
     },
   ]);
   return (
     <Provider store={appStore}>
       <div className="App">
-        <RouterProvider router={appRouter} />
+        <RouterProvider
+          router={appRouter}
+          future={{v7_skipActionErrorRevalidation: true}}
+        />
       </div>
     </Provider>
   );

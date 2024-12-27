@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const TestHome = () => {
+  const navigate = useNavigate()
   const testList = ["Test-01", "Test-02"];
   return (
     <div className="flex flex-row font-poppins ">
@@ -14,7 +16,7 @@ const TestHome = () => {
               FULL LENGTH {item}
             </div>
             <div>
-              <button className="px-2 py-1 bg-blue-400 rounded-md">
+              <button onClick={()=>navigate("/test-layout")} className="px-2 py-1 bg-blue-400 rounded-md">
                 Start
               </button>
             </div>
